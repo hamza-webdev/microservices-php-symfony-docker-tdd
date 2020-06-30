@@ -6,8 +6,8 @@ RUN apt-get update && apt-get install -y \
     libzip-dev \
     zip \
     && docker-php-ext-install intl opcache pdo_mysql \
-    && pecl install apcu xdebug-2.7.0RC2 \
-    && docker-php-ext-enable apcu xdebug \
+    && pecl install apcu xdebug-2.7.0RC2 redis\
+    && docker-php-ext-enable apcu xdebug redis\
     && docker-php-ext-configure zip --with-libzip \
     && docker-php-ext-install zip \
 
